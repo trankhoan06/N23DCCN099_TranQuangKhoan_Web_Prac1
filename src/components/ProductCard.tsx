@@ -15,10 +15,8 @@ type ProductCardProps = {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <Link
-     href={"/product?id=" +product.id} // dynamic route
-    >
-    <a  className="border p-4 rounded-xl shadow-sm hover:shadow-lg transition">
+    <Link href={"/product/" +product.id} >
+    <div  className="border p-4 rounded-xl shadow-sm hover:shadow-lg transition">
       <img
         src={product.image}
         alt={product.title}
@@ -38,7 +36,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           Add +
         </button>
       </div>
-    </a>
+    </div>
     </Link>
   );
 };

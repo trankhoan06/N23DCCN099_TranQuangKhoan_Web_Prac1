@@ -1,13 +1,15 @@
 "use client";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 type Product = { id: number; title: string; price: number; description: string; category: string; image: string; rating?: { rate:number; count:number }};
 
 export default function ProductDetail() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const id = searchParams.get("id");
+  // const searchParams = useSearchParams();
+  // const id = searchParams.get("id");
+  const params = useParams();
+const id = params.id;
   const [product, setProduct] = useState<Product | null>(null);
 
   useEffect(() => {
